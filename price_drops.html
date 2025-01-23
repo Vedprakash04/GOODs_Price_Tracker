@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Drops</title>
+</head>
+<body>
+    <h1>Products with Price Drops</h1>
+    {% if products %}
+    <ul>
+        {% for product in products %}
+        <li>
+            {{ product['name'] }} - New Price: ₹{{ product['new_price'] }} 
+            <a href="{{ product['url'] }}" target="_blank">Buy Now</a>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No price drops found.</p>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
